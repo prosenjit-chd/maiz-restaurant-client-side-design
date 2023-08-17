@@ -9,7 +9,7 @@ import React from 'react';
 const index = () => {
     return (
         <div>
-            <Header navColor="5B0017" textColor="FFFFFF" />
+            <Header navColor="5B0017" textColor="FFFFFF" colorSkim="first" />
 
             <div className='bg-[#5B0017]'>
                 <Banner />

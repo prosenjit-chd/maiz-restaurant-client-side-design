@@ -2,19 +2,15 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Map from '@/components/Map';
 import React from 'react';
-import { useRouter } from 'next/router';
+
 
 
 const story = () => {
-    // Dynamic Router section 
-
-    const router = useRouter();
-    const { type } = router.query;
 
 
     return (
         <div>
-            <Header navColor="CC9D2F" textColor="5B0017" />
+            <Header navColor="CC9D2F" textColor="5B0017" colorSkim="second" />
 
             <div className='bg-[#CC9D2F]'>
                 <div >
