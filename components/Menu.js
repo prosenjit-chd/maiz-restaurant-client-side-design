@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 
-const cardData = [
-    { id: 1, title: 'Bukhari', imageUrl: 'https://i.ibb.co/2FGRVdj/menu-1.png' },
-    { id: 2, title: 'Saudi Makboos', imageUrl: 'https://i.ibb.co/YkfDydf/menu-9.png' },
-    { id: 3, title: 'Zurbiam', imageUrl: 'https://i.ibb.co/wz86Xqt/menu-8.png' },
-    { id: 4, title: 'Kabsa', imageUrl: 'https://i.ibb.co/McMc8dQ/menu-7.png' },
-    { id: 5, title: 'Madfoon', imageUrl: 'https://i.ibb.co/F5qSPhg/menu-6.png' },
-    { id: 6, title: 'Math Lootha', imageUrl: 'https://i.ibb.co/hf0gtZw/menu-5.png' },
-    { id: 7, title: 'Margoug', imageUrl: 'https://i.ibb.co/Jn5ZDXd/menu-4.png' },
-    { id: 8, title: 'Sayadya', imageUrl: 'https://i.ibb.co/42pMtKS/menu-3.png' },
-    { id: 9, title: 'Saleeg', imageUrl: 'https://i.ibb.co/NWQdRbH/menu-2.png' }
-];
+
 
 const Menu = () => {
+    const categories = ["All", "Feast", "Coffee", "Cocktails", "Dessert"];
+
+    const cardData = [
+        { id: 1, title: 'Bukhari', imageUrl: 'https://i.ibb.co/2FGRVdj/menu-1.png', type: 'Feast' },
+        { id: 2, title: 'Saudi Makboos', imageUrl: 'https://i.ibb.co/YkfDydf/menu-9.png', type: 'Feast' },
+        { id: 3, title: 'Zurbiam', imageUrl: 'https://i.ibb.co/wz86Xqt/menu-8.png', type: 'Cocktails' },
+        { id: 4, title: 'Kabsa', imageUrl: 'https://i.ibb.co/McMc8dQ/menu-7.png', type: 'Cocktails' },
+        { id: 5, title: 'Madfoon', imageUrl: 'https://i.ibb.co/F5qSPhg/menu-6.png', type: 'dessert' },
+        { id: 6, title: 'Math Lootha', imageUrl: 'https://i.ibb.co/hf0gtZw/menu-5.png', type: 'dessert' },
+        { id: 7, title: 'Margoug', imageUrl: 'https://i.ibb.co/Jn5ZDXd/menu-4.png', type: 'Coffee' },
+        { id: 8, title: 'Sayadya', imageUrl: 'https://i.ibb.co/42pMtKS/menu-3.png', type: 'Coffee' },
+        { id: 9, title: 'Saleeg', imageUrl: 'https://i.ibb.co/NWQdRbH/menu-2.png', type: 'Feast' }
+    ];
+
+    const [selectedCategory, setSelectedCategory] = useState("all");
+
+    const filteredData = useMemo(() => {
+        if (selectedCategory.toLowerCase() === "all") {
+            return cardData;
+        } else {
+            return cardData.filter((card) => card.type.toLowerCase() === selectedCategory.toLowerCase())
+        }
+    }, [cardData, selectedCategory])
+
+
+
     return (
         <div className="bg-[#5B0017]  text-white">
 
@@ -37,20 +53,21 @@ const Menu = () => {
                 </div>
 
                 <div className="flex mb-8">
-                    <p className="me-7 font-semibold">All</p>
-                    <p className="me-7 text-[#B8B8B8]">Feast</p>
-                    <p className="me-7 text-[#B8B8B8]">Coffee</p>
-                    <p className="me-7 text-[#B8B8B8]">Cocktails</p>
-                    <p className="text-[#B8B8B8]">dessert</p>
+                    {categories.map(category => (
+                        <button onClick={() => setSelectedCategory(category)} className={`me-7 ${category.toLowerCase() === selectedCategory.toLowerCase() ? 'text-white' : 'text-[#B8B8B8]'} `} key={category}>
+                            {category}
+                        </button>
+                    ))}
+
                 </div>
 
 
                 <div className="grid grid-cols-3 gap-8 mb-8">
-                    {cardData.map((card) => (
-                        <div key={card.id} className="mb-4 bg-[#243054]">
-                            <img src={card.imageUrl} alt={card.title} className="w-full h-auto" />
+                    {filteredData.map((card) => (
+                        <div key={card.id} className="mb-4 bg-[#243054] group  overflow-hidden">
+                            <img src={card.imageUrl} alt={card.title} className="w-full h-auto group-hover:scale-110 duration-500" />
                             <div className=' py-6'>
-                                <h2 className="text-2xl font-normal ms-6">{card.title}</h2>
+                                <h2 className="text-2xl font-normal ms-6 group-hover:text-yellow-500">{card.title}</h2>
                             </div>
 
                         </div>
@@ -58,7 +75,7 @@ const Menu = () => {
                 </div>
 
 
-                <button className="border border-white text-white py-2 px-4 mx-auto block">Show More</button>
+                <button className="border border-white text-white py-2 px-4 mx-auto block hover:text-yellow-400 hover:border-yellow-700">Show More</button>
             </div>
         </div>
     );

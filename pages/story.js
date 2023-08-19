@@ -23,10 +23,10 @@ const story = () => {
                                 <p className="mb-20 text-[#5B0017]">We’re an absolute leader in the Saudi cuisine-themed restaurants.</p>
                                 <div className="grid grid-cols-2 gap-16">
                                     <div className="pt-10">
-                                        <img src="https://i.ibb.co/wywJY4r/story-picture-1.png" alt="Image 1" className="w-full h-auto" />
+                                        <img src="https://i.ibb.co/wywJY4r/story-picture-1.png" alt="Image 1" className="w-full h-auto  hover:scale-125 duration-500" />
                                     </div>
                                     <div className="">
-                                        <img src="https://i.ibb.co/YDF0sBC/story-picture-2.png" alt="Image 2" className="w-full h-auto" />
+                                        <img src="https://i.ibb.co/YDF0sBC/story-picture-2.png" alt="Image 2" className="w-full h-auto hover:scale-125 duration-500" />
                                     </div>
                                 </div>
                             </div>
