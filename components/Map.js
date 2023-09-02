@@ -2,9 +2,9 @@ import React from 'react';
 
 const Map = ({ bgColor }) => {
     return (
-        <div className="flex container mx-auto">
+        <div className="grid grid-cols-12 container mx-auto">
             {/* Left Side */}
-            <div className={`w-2/6 py-16 px-12 bg-[#${bgColor}]`}>
+            <div className={`col-span-12 md:col-span-12  lg:col-span-6 py-16 px-12 bg-[#${bgColor}]`}>
                 <div className="mb-8">
                     <h1 className="text-xl font-bold mb-2 text-[#CC9D2F]">Working Hours</h1>
                     <div className='text-white'>Sunday to Saturday</div>
@@ -28,7 +28,7 @@ const Map = ({ bgColor }) => {
             </div>
 
             {/* Right Side */}
-            <div className="w-4/6">
+            <div className="col-span-12 md:col-span-12  lg:col-span-6">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7306104.542187608!2d38.805948482458334!3d26.602536676998778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1691599086583!5m2!1sen!2sbd" width="100%" height="100%" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 {/* <img src="https://i.ibb.co/hWNBjDv/Map.png" alt="Map" className="w-full h-full object-cover" /> */}
             </div>

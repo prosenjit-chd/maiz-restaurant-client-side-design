@@ -13,25 +13,25 @@ const Footer = () => {
 
                     <button className='bg-[#000000] text-[#FFFFFF] font-semibold py-4 px-6 my-12'>MAIZ المعز</button>
 
-                    <div className="flex mb-8 text-[#5B0017] justify-center font-semibold">
+                    <div className="flex flex-col md:flex-row mb-8 text-[#5B0017] justify-center font-semibold">
 
-                        <p className="me-7">Home</p>
-                        <p className="me-7">About</p>
-                        <p className="me-7">Menu</p>
-                        <p className="me-7">Venue</p>
-                        <p className="me-7"> Events</p>
+                        <p className="lg:me-7">Home</p>
+                        <p className="lg:me-7">About</p>
+                        <p className="lg:me-7">Menu</p>
+                        <p className="lg:me-7">Venue</p>
+                        <p className="lg:me-7"> Events</p>
                         <p className="">Contact us</p>
 
                     </div>
 
                     <hr className="border-gray-500 " />
 
-                    <div className='flex justify-between py-4 container mx-auto'>
+                    <div className='flex flex-wrap sm:justify-center sm:text-center md:justify-between  lg:justify-between py-4 container mx-auto'>
                         <div className='text-[#243054]'>
                             © 2021 | All rights reserved.
                         </div>
                         <div>
-                            <ul className="flex pe-72 justify-between space-x-2 font-medium text-[#243054]">
+                            <ul className="flex lg:pe-72 md:pe-72 justify-between space-x-2 font-medium text-[#243054]">
                                 <li>
                                     <a><FacebookSVG /></a>
                                 </li>

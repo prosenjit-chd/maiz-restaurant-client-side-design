@@ -7,13 +7,13 @@ const Header = ({ navColor, textColor, colorSkim }) => {
 
     return (
         <div className={`bg-[#${navColor}] `}>
-            <div className='flex justify-between py-6 container mx-auto items-center'>
+            <div className='flex flex-wrap justify-between py-6 container mx-auto items-center'>
                 <div>
                     <img src={colorSkim === "first" ? "https://i.ibb.co/8ry1c87/logo.png" : "https://i.ibb.co/mXNJSdL/logo.png"} alt="Review" className="w-auto h-auto " />
                 </div>
 
                 <div className={`text-[#${textColor}]`}>
-                    <ul className="flex justify-between space-x-14 font-light text-2xl">
+                    <ul className="flex flex-col md:flex-row justify-between space-x-2 md:space-x-6 lg:space-x-14 font-light text-2xl">
                         <li>
                             <Link href='/home'>Home</Link>
                         </li>
@@ -30,7 +30,7 @@ const Header = ({ navColor, textColor, colorSkim }) => {
                 </div>
 
                 <div>
-                    <img src={colorSkim === "first" ? "https://i.ibb.co/XZk8XGn/button.png" : "https://i.ibb.co/LzR5V42/button.png"} alt="Review" className="w-auto h-auto " />
+                    <img src={colorSkim === "first" ? "https://i.ibb.co/XZk8XGn/button.png" : "https://i.ibb.co/LzR5V42/button.png"} alt="Review" className="w-auto h-auto" />
                 </div>
             </div>
         </div>

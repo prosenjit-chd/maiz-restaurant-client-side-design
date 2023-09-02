@@ -33,9 +33,9 @@ const Menu = () => {
         <div className="bg-[#5B0017]  text-white">
 
             <div className='container mx-auto'>
-                <div className="flex mb-8">
+                <div className="grid grid-cols-12 mb-8">
 
-                    <div className="w-1/2 pr-4 py-16">
+                    <div className="col-span-12 md:col-span-12  lg:col-span-6 pr-1 md:pr-2 lg:pr-4 py-2 md:py-4 lg:py-16">
                         <div className='flex items-center'>
                             <p className="text-sm mb-2 text-[#CC9D2F]">OUR MENU</p>
                             <div className='ms-2 h-0.5 w-8  mb-1.5 border-b border-white' />
@@ -45,24 +45,37 @@ const Menu = () => {
                     </div>
 
 
-                    <div className="w-1/2 flex items-center justify-center py-16">
+                    <div className="col-span-12 md:col-span-6  lg:col-span-6 flex items-center justify-center py-2 md:py-4 lg:py-16">
                         <div className="text-[#B8B8B8]">
                             There is a wide selection of choices served by top<br /> Saudi chefs, prepared using best quality local<br /> ingredients.
                         </div>
                     </div>
                 </div>
 
-                <div className="flex mb-8">
-                    {categories.map(category => (
-                        <button onClick={() => setSelectedCategory(category)} className={`me-7 ${category.toLowerCase() === selectedCategory.toLowerCase() ? 'text-white' : 'text-[#B8B8B8]'} `} key={category}>
-                            {category}
-                        </button>
-                    ))}
+                <div className='lg:block  hidden'>
 
+                    <div className="flex mb-8 ">
+                        {categories.map(category => (
+                            <button onClick={() => setSelectedCategory(category)} className={`me-7 ${category.toLowerCase() === selectedCategory.toLowerCase() ? 'text-white' : 'text-[#B8B8B8]'} `} key={category}>
+                                {category}
+                            </button>
+                        ))}
+
+                    </div>
+                </div>
+                <div className='lg:hidden block'>
+                    <select onChange={(e) => setSelectedCategory(e.target.value)} defaultChecked={selectedCategory} className='text-black sm:mb-2 md:mb-2'>
+                        {categories.map(category => (
+                            <option value={category}>
+                                {category}
+                            </option>
+                        ))}
+
+                    </select>
                 </div>
 
 
-                <div className="grid grid-cols-3 gap-8 mb-8">
+                <div className="grid grid:cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
                     {filteredData.map((card) => (
                         <div key={card.id} className="mb-4 bg-[#243054] group  overflow-hidden">
                             <img src={card.imageUrl} alt={card.title} className="w-full h-auto group-hover:scale-110 duration-500" />
