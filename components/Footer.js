@@ -13,7 +13,7 @@ const Footer = () => {
 
                     <button className='bg-[#000000] text-[#FFFFFF] font-semibold py-4 px-6 my-12'>MAIZ المعز</button>
 
-                    <div className="flex flex-col md:flex-row mb-8 text-[#5B0017] justify-center font-semibold">
+                    <div className="flex flex-col lg:flex-row mb-8 text-[#5B0017] justify-center font-semibold">
 
                         <p className="lg:me-7">Home</p>
                         <p className="lg:me-7">About</p>

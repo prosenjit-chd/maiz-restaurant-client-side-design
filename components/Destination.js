@@ -4,11 +4,11 @@ const Destination = () => {
     return (
         <div className='container mx-auto bg-[#5B0017]'>
             <div className='grid grid-cols-12 items-center '>
-                <div className='col-span-5  flex justify-center'>
+                <div className='col-span-12 md:col-span-12 lg:col-span-5  flex justify-center'>
                     <img src="https://i.ibb.co/QCHMfrn/image-3.png" alt="Review" className="h-[530px]" />
                 </div>
 
-                <div className='col-span-7 ps-8'>
+                <div className='col-span-12 md:col-span-12 lg:col-span-7 ps-8'>
                     <h1 className='text-5xl text-white font-normal'>
                         A distinctive dining destination
                     </h1>

@@ -6,14 +6,14 @@ const Review = () => {
 
             <div className='grid grid-cols-12 items-center'>
 
-                <div className="col-span-5 text-[#243054]  px-12">
+                <div className="col-span-12 md:col-span-12 lg:col-span-5 text-[#243054] px-2 md:px-6 lg:px-12">
                     {/* Left Side */}
                     <div className=" text-2xl">
                         "You can't go wrong with Chicken Mandi, I had it twice. The chicken was cooked perfectly, juicy & soft (usually mandi chicken is a bit dry). I would defiantly recommend it.
                     </div>
 
 
-                    <div className='mt-32'>
+                    <div className='mt-6 md:mt-16 lg:mt-32'>
                         <div className="flex justify-between">
 
                             <div className="">
@@ -30,7 +30,7 @@ const Review = () => {
 
 
                 {/* Right Side */}
-                <div className="col-span-7">
+                <div className="col-span-12 md:col-span-12 lg:col-span-7 pb-4 lg:pb-0">
                     <div className='relative '>
                         <img src="https://i.ibb.co/JrJZjdK/review.png" alt="Review" className="w-full h-full object-cover" />
                         {/* <div className='absolute top-0 h-full w-full flex justify-center items-center'> */}
